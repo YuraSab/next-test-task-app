@@ -76,6 +76,10 @@
   --sidebar-ring: oklch(0.708 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+  --font-sans: var(--font-poppins);
+  --color-accent-green: #00C853; 
+  --color-brand-orange: #FF9900; 
+  --color-inactive-grey: theme(colors.gray.400);
 }
 
 .dark {
