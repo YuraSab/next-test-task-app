@@ -23,7 +23,7 @@ const TaskColumn = ({ title, status, tasks, loading }: TaskColumnProps) => {
   }
 
   return (
-    <div className="flex flex-col space-y-4 min-w-[280px] w-full max-w-[320px]">
+    <div className="flex-shrink-0 min-w-[280px] max-w-[320px] flex flex-col space-y-4 ">
       <h3 className={`text-base font-medium tracking-wide`}>
         {title} ({filteredTasks.length})
       </h3>

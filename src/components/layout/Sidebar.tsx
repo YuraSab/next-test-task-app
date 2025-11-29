@@ -2,21 +2,34 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { LayoutGrid, Settings } from 'lucide-react'; 
+import { LayoutGrid, Settings, X } from 'lucide-react'; 
 
 const NavLinks = [
   { name: 'Dashboard', href: '/', icon: LayoutGrid }, 
   { name: 'Setting', href: '/settings', icon: Settings },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+    onClose?: () => void; 
+    isMobile?: boolean;
+}
+
+export default function Sidebar({ onClose, isMobile = false }: SidebarProps) {
   const pathname = usePathname();
   const ACCENT_GREEN_CLASS = 'text-[var(--color-accent-green)]'; 
   const INACTIVE_COLOR = 'text-gray-400'; 
 
   return (
-    <div className="w-[250px] fixed h-full bg-white border-r border-gray-100 flex-col justify-between z-10 hidden lg:flex font-poppins">
+    <div className="bg-white flex-col justify-between font-poppins h-full">
       <div className="p-4 flex flex-col h-full">
+        {isMobile && (
+                <button 
+                    onClick={onClose} 
+                    className="absolute top-4 right-4 p-2 text-gray-800 lg:hidden z-50"
+                >
+                    <X className="w-6 h-6" />
+                </button>
+        )}
         <div className="flex items-center space-x-2 mb-10 mt-6 pl-2">
           <div className="w-8 h-8 rounded-full bg-[var(--color-brand-orange)] text-white flex items-center justify-center font-medium text-lg">
             C
@@ -37,6 +50,7 @@ export default function Sidebar() {
                     : `${INACTIVE_COLOR} font-normal` 
                   }
                 `}
+                onClick={isMobile ? onClose : undefined}
               >
                 <Icon className={`w-6 h-6 ${isActive ? ACCENT_GREEN_CLASS : INACTIVE_COLOR}`} />
                 <span>{link.name}</span>

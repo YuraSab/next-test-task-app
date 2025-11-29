@@ -24,11 +24,21 @@ export default function DashboardPage() {
     return <div className="text-red-500 text-center p-8">Error loading tasks. Please check API URL.</div>;
   
   return (
-    <div className="font-poppins p-12">
+    // <div className="font-poppins p-12">
+    // <div className="flex flex-col h-full font-poppins p-12 overflow-x-hidden">
+      <div className="flex flex-col min-h-screen font-poppins p-12">
+
       <h1 className="text-xl font-medium mb-1">My Tasks</h1>
       <p className="text-sm font-normal text-gray-400 mb-8">{formattedDate}</p>
 
-      <div className="flex space-x-6 overflow-x-auto pb-4 items-stretch">
+      {/* <div className="flex space-x-6 overflow-x-auto pb-4 items-stretch"> */}
+      {/* <div className="flex space-x-6 overflow-x-auto pb-4 items-stretch max-w-full"> */}
+      {/* <div className="flex space-x-6 overflow-x-auto pb-4 items-stretch max-w-full w-full pr-16"> */}
+      {/* <div className="flex space-x-6 overflow-x-auto pb-4 items-stretch w-full"> */}
+
+
+<div className="relative isolate max-w-[100vw] overflow-x-auto pb-4">
+  <div className="flex space-x-6 items-stretch min-w-max pr-20">
         {columns.map(column => (
           <TaskColumn
             key={column.status}
@@ -39,6 +49,8 @@ export default function DashboardPage() {
           />
         ))}
       </div>
+</div>
+
     </div>
   );
 }
