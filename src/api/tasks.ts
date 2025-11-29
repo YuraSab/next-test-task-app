@@ -1,6 +1,6 @@
-type TaskStatus = "to-do" | "in-progress" | "review" | "completed";
+export type TaskStatus = "to-do" | "in-progress" | "review" | "completed";
 
-interface Task {
+export interface Task {
     id: string,
     title: string,
     description: string,

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "../globals.css";
 import QueryProvider from "@/components/providers/QueryProvider";
-import Sidebar from "@/components/layout/Sidebar";
+import { AppShell } from "@/components/layout/AppShell";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,12 +36,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased`}
       >
         <QueryProvider>
-          <div className="flex min-h-screen">
-            <Sidebar/>
-            <main className="flex-1 min-h-screen bg-white md:p-12 p-6 lg:ml-[250px] transition-all duration-300">
-              {children}
-            </main>
-          </div>
+          <AppShell>
+            {children}
+          </AppShell>
         </QueryProvider>
       </body>
     </html>

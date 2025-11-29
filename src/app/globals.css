@@ -80,6 +80,16 @@
   --color-accent-green: #00C853; 
   --color-brand-orange: #FF9900; 
   --color-inactive-grey: theme(colors.gray.400);
+  --color-badge-green: #85E19D;
+  --color-primary: #00C853;
+  --color-save-button: #64C882;
+  --color-label-grey: #666666;
+  --color-logout-button: #D23D3D;
+  --color-profile-text: #121212;
+  --color-progress-circle-bg: #C4C4C4;
+  --color-completed-bg: #F5F6F8;
+  --color-completed-text: #dddddd;
+  --color-description-text: #12121299;
 }
 
 .dark {
@@ -116,6 +126,22 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+.text-primary {
+  color: var(--color-primary) !important;
+}
+.bg-completed-bg {
+  background-color: var(--color-completed-bg);
+}
+.text-completed-text {
+  color: var(--color-completed-text);
+}
+.text-description-text {
+  color: var(--color-description-text);
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -123,4 +149,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html, body {
+  overflow-x: hidden;
 }
