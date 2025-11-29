@@ -38,7 +38,7 @@ export default function RootLayout({
         <QueryProvider>
           <div className="flex min-h-screen">
             <Sidebar/>
-            <main className="flex-1 min-h-screen bg-white md:p-12 p-6 lg:ml-[250px] transition-all duration-300">
+            <main className="flex-1 min-h-screen lg:ml-[250px] transition-all duration-300 bg-[#F7F9FD]">
               {children}
             </main>
           </div>
